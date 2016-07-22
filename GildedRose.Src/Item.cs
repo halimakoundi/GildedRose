@@ -1,3 +1,5 @@
+using System;
+
 namespace GildedRoseKata.Src
 {
     public class Item
@@ -48,9 +50,10 @@ namespace GildedRoseKata.Src
             return SellIn < 0;
         }
 
-        public virtual void UpdateQuality()
+        public virtual void UpdateQuality(Item item)
         {
             
         }
+        
     }
 }

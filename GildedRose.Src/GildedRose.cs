@@ -35,7 +35,7 @@ namespace GildedRoseKata.Src
             }
             if (!ItemIsAgedBrie(item) && !ItemIsBackstagePasses(item))
             {
-                var defaultItem =new DefaultItem();
+                Item defaultItem =new DefaultItem();
                 defaultItem.UpdateQuality(item);
             }
         }
