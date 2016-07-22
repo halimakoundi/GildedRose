@@ -4,7 +4,7 @@ namespace GildedRoseKata.Src
     {
         
 
-        public void AgedBrieUpdateQuality(Item item)
+        public void UpdateQuality(Item item)
         {
             item.IncreaseQuality();
             item.UpdateExpiration();

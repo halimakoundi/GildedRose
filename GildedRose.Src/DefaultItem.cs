@@ -2,7 +2,7 @@ namespace GildedRoseKata.Src
 {
     public class DefaultItem
     {
-        public static void DefaultItemUpdateQuality(Item item)
+        public void UpdateQuality(Item item)
         {
             item.DecreaseQuality();
             item.UpdateExpiration();

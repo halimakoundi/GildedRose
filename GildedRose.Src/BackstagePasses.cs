@@ -5,7 +5,7 @@ namespace GildedRoseKata.Src
         private const int BackstagePassesSecondCutOff = 6;
         private const int BackstagePassesFirstCutOff = 11;
 
-        public static void BackstagePassesItemUpdateQuality(Item item)
+        public void UpdateQuality(Item item)
         {
             item.IncreaseQuality();
             if (WithinFirstCutOff(item))

@@ -26,16 +26,17 @@ namespace GildedRoseKata.Src
             if (ItemIsAgedBrie(item))
             {
                 var agedBrie    = new AgedBrie();
-                agedBrie.AgedBrieUpdateQuality(item);
+                agedBrie.UpdateQuality(item);
             }
             if (ItemIsBackstagePasses(item))
             {
-                BackstagePasses.BackstagePassesItemUpdateQuality(item);
-                
+                var backstagePasses = new BackstagePasses();
+                backstagePasses.UpdateQuality(item);
             }
             if (!ItemIsAgedBrie(item) && !ItemIsBackstagePasses(item))
             {
-                DefaultItem.DefaultItemUpdateQuality(item);
+                var defaultItem =new DefaultItem();
+                defaultItem.UpdateQuality(item);
             }
         }
 
