@@ -23,22 +23,20 @@ namespace GildedRoseKata.Src
 
         private void UpdateQuality(Item item)
         {
-            Item itemToUpdate;
+            Item itemToUpdate = null;
             if (ItemIsAgedBrie(item))
             {
-                var agedBrie    = new AgedBrie();
-                agedBrie.UpdateQuality(item);
+                itemToUpdate = new AgedBrie();
             }
             if (ItemIsBackstagePasses(item))
             {
                 itemToUpdate = new BackstagePasses();
-                itemToUpdate.UpdateQuality(item);
             }
             if (!ItemIsAgedBrie(item) && !ItemIsBackstagePasses(item))
             {
                 itemToUpdate =new DefaultItem();
-                itemToUpdate.UpdateQuality(item);
             }
+            itemToUpdate.UpdateQuality(item);
         }
 
         private static bool ItemIsAgedBrie(Item item)
