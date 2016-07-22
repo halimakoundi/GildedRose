@@ -1,6 +1,6 @@
 namespace GildedRoseKata.Src
 {
-    public class BackstagePasses
+    public class BackstagePasses:Item
     {
         private const int BackstagePassesSecondCutOff = 6;
         private const int BackstagePassesFirstCutOff = 11;
