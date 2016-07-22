@@ -15,14 +15,25 @@ namespace GildedRoseKata.Src
         {
             for (var i = 0; i < Items.Count; i++)
             {
-                UpdateQuality(Items[i]);
+                UpdateQuality(i);
             }
         }
 
-        private void UpdateQuality(Item item)
+        private void UpdateQuality(int index)
         {
-            var itemToUpdate = ItemFactory.ItemWithName(item);
-            itemToUpdate.UpdateQuality(item);
+            var itemToUpdate = ItemFactory.New(Items[index]);
+            itemToUpdate.UpdateQuality();
+            UpdateItem(index, itemToUpdate);
+        }
+
+        private void UpdateItem(int index, Item itemToUpdate)
+        {
+            Items[index] = new Item()
+            {
+                Quality = itemToUpdate.Quality,
+                Name = itemToUpdate.Name,
+                SellIn = itemToUpdate.SellIn
+            };
         }
     }
 }

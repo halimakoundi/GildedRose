@@ -2,15 +2,20 @@ namespace GildedRoseKata.Src
 {
     public class AgedBrie:Item
     {
-        
-
-        public override void UpdateQuality(Item item)
+        public AgedBrie(Item item)
         {
-            item.IncreaseQuality();
-            item.UpdateExpiration();
-            if (item.HasExpired())
+            Name = item.Name;
+            Quality = item.Quality;
+            SellIn = item.SellIn;
+        }
+
+        internal override void UpdateQuality()
+        {
+            IncreaseQuality();
+            UpdateExpiration();
+            if (HasExpired())
             {
-                item.IncreaseQuality();
+                IncreaseQuality();
             }
         }
     }

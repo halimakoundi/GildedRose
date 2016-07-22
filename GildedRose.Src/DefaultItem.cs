@@ -1,14 +1,21 @@
 namespace GildedRoseKata.Src
 {
-    public class DefaultItem:Item
+    public class DefaultItem : Item
     {
-        public override void UpdateQuality(Item item)
+        public DefaultItem(Item item)
         {
-            item.DecreaseQuality();
-            item.UpdateExpiration();
-            if (item.HasExpired())
+            Name = item.Name;
+            Quality = item.Quality;
+            SellIn = item.SellIn;
+        }
+
+        internal override void UpdateQuality()
+        {
+            DecreaseQuality();
+            UpdateExpiration();
+            if (HasExpired())
             {
-                item.DecreaseQuality();
+                DecreaseQuality();
             }
         }
     }

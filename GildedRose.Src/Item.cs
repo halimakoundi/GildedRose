@@ -37,6 +37,11 @@ namespace GildedRoseKata.Src
 
         }
 
+        internal virtual void UpdateQuality()
+        {
+            throw new NotImplementedException();
+        }
+
         internal void UpdateExpiration()
         {
             if (IsMutable())

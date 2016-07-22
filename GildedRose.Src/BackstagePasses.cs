@@ -2,36 +2,43 @@ namespace GildedRoseKata.Src
 {
     public class BackstagePasses:Item
     {
+        public BackstagePasses(Item item)
+        {
+            Name = item.Name;
+            Quality = item.Quality;
+            SellIn= item.SellIn;
+        }
+
         private const int BackstagePassesSecondCutOff = 6;
         private const int BackstagePassesFirstCutOff = 11;
 
-        public override void UpdateQuality(Item item)
+        internal override void UpdateQuality()
         {
-            item.IncreaseQuality();
-            if (WithinFirstCutOff(item))
+            IncreaseQuality();
+            if (WithinFirstCutOff())
             {
-                item.IncreaseQuality();
+                IncreaseQuality();
             }
 
-            if (WithinSecondCutOff(item))
+            if (WithinSecondCutOff())
             {
-                item.IncreaseQuality();
+                IncreaseQuality();
             }
-            item.UpdateExpiration();
-            if (item.HasExpired())
+            UpdateExpiration();
+            if (HasExpired())
             {
-                item.ResetQuality();
+                ResetQuality();
             }
         }
 
-        private static bool WithinFirstCutOff(Item item)
+        private  bool WithinFirstCutOff()
         {
-            return item.SellIn < BackstagePassesFirstCutOff;
+            return SellIn < BackstagePassesFirstCutOff;
         }
 
-        private static bool WithinSecondCutOff(Item item)
+        private  bool WithinSecondCutOff()
         {
-            return item.SellIn < BackstagePassesSecondCutOff;
+            return SellIn < BackstagePassesSecondCutOff;
         }
     }
 }
